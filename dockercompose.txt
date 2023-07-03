@@ -1,0 +1,29 @@
+1)sudo curl -L "https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+2)sudo chmod +x /usr/local/bin/docker-compose
+3)docker-compose  --version
+4)docker-compose  --version
+
+5)version: '3'
+
+services:
+ mydb:
+  image: mysql:5
+  environment:
+   MYSQL_ROOT_PASSWORD: ajay007
+
+ apache:
+  image: httpd
+  ports:
+   - 6060:8080
+  links:
+   - mydb:mysql
+
+
+ php:
+  image: php
+  links:
+   - mydb:mysql
+   - apache:tomcat
+6)docker-compose up -d
+7)docker container ls
+8)docker ps -a

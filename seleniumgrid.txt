@@ -1,0 +1,31 @@
+Create an Instance with 
+-	T2.Medium
+-	10GB storage
+-	Add the Inbound rule with Accepting all TCP
+-	Copy the SSH key
+-	Download the pem file
+
+sudo su –
+sudo apt install default-jre
+sudo apt install default-jdk
+sudo apt install docker
+sudo apt install docker-compose
+git clone "https://github.com/purnachand88/DockerSeleniumGrid.git"
+*****(https://github.com/purnachand88/DockerSeleniumGrid/blob/main/SetupSeleniumGrid4.yml)
+ls
+cd DockerSeleniumGrid
+ls
+mv setup SeleniumGrid4.yml docker-compose.yml
+docker-compose up
+
+same pem file with another gitbash
+sudo su -
+docker ps -a
+
+
+copy public ip address
+publicipaddress:portnumber inconsole o/p for selenium grid
+
+again public ip address:chromeportnumber
+password :secrect
+

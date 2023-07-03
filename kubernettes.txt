@@ -1,0 +1,23 @@
+customtcp 30000-32767 0.0.0.0/0
+customtcp 30000-32767 ::/0
+ssh          22       0.0.0.0/0
+
+
+
+sudo apt-get update
+sudo apt-get install docker.io -y
+sudo usermod -aG docker $USER && newgrp docker
+curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+sudo install minikube-linux-amd64 /usr/local/bin/minikube
+sudo snap install kubectl --classic
+minikube start --driver=docker
+minikube status
+kubectl get pods
+kubectl get svc
+kubectl create deployment hello-node --image=k8s.gcr.io/echoserver:1.4
+kubectl expose deployment hello-node --type=Nodeport --port=8080
+kubectl get svc
+minikube ip
+curl 172.31.50.87:enter that i get
+minikube service hello-node
+
